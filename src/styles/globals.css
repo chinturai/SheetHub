@@ -11,7 +11,8 @@ html {
 }
 
 body {
-  @apply bg-gradient-to-br from-gray-50 via-blue-50 to-gray-50 text-gray-900 font-sans;
+  @apply bg-gradient-to-br from-gray-50 via-blue-50 to-gray-50 text-gray-900;
+  font-family: 'Recursive', sans-serif;
 }
 
 /* Custom Scrollbar */

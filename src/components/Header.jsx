@@ -24,7 +24,12 @@ const Header = ({ sidebarOpen, setSidebarOpen, onSearchOpen, onExport, onImport,
           >
             <BarChart3 size={18} className="sm:w-5 sm:h-5" />
           </button>
-          <h1 className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent truncate">SheetHub</h1>
+          <h1 className="text-lg sm:text-2xl font-black tracking-tight hidden sm:block">
+            <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-clip-text text-transparent italic">Sheet</span><span className="text-white bg-gradient-to-r from-orange-500 to-orange-600 px-2 py-1 rounded-full ml-1 inline-block">Hub</span>
+          </h1>
+          <h1 className="text-xl sm:text-2xl font-black tracking-tight sm:hidden">
+            <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent italic">S</span><span className="text-white bg-gradient-to-r from-orange-500 to-orange-600 px-1.5 py-0.5 rounded-lg ml-0.5 inline-block text-sm">H</span>
+          </h1>
         </div>
 
         {/* Center - Search Bar */}

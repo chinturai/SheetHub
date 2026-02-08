@@ -68,25 +68,27 @@ const QuestionModal = ({ isOpen, mode, topicId, subTopicId, questionId, onClose 
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md max-h-96 overflow-y-auto">
+      <div className="bg-white rounded-2xl shadow-2xl p-6 w-full max-w-md max-h-[90vh] overflow-y-auto">
         {/* Header */}
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-bold text-gray-900">
-            {mode === 'add' ? 'Add Question' : 'Edit Question'}
-          </h2>
-          <button
-            onClick={onClose}
-            className="p-1 hover:bg-gray-100 rounded"
-          >
-            <X size={20} />
-          </button>
+        <div className="bg-gradient-to-r from-blue-50 to-blue-100 -m-6 mb-6 p-6 border-b border-blue-200 sticky -top-6">
+          <div className="flex items-center justify-between">
+            <h2 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
+              {mode === 'add' ? 'Add Question' : 'Edit Question'}
+            </h2>
+            <button
+              onClick={onClose}
+              className="p-1.5 hover:bg-blue-200 rounded-lg transition-colors duration-200"
+            >
+              <X size={20} />
+            </button>
+          </div>
         </div>
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Title */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
               Question Title *
             </label>
             <input
@@ -95,21 +97,21 @@ const QuestionModal = ({ isOpen, mode, topicId, subTopicId, questionId, onClose 
               value={formData.title}
               onChange={handleChange}
               placeholder="e.g., Two Sum"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white"
               autoFocus
             />
           </div>
 
           {/* Difficulty */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
               Difficulty
             </label>
             <select
               name="difficulty"
               value={formData.difficulty}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white"
             >
               <option>Easy</option>
               <option>Medium</option>
@@ -119,14 +121,14 @@ const QuestionModal = ({ isOpen, mode, topicId, subTopicId, questionId, onClose 
 
           {/* Platform */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
               Platform
             </label>
             <select
               name="platform"
               value={formData.platform}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white"
             >
               <option value="leetcode">LeetCode</option>
               <option value="gfg">GeeksforGeeks</option>
@@ -137,7 +139,7 @@ const QuestionModal = ({ isOpen, mode, topicId, subTopicId, questionId, onClose 
 
           {/* Problem URL */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
               Problem URL
             </label>
             <input
@@ -146,13 +148,13 @@ const QuestionModal = ({ isOpen, mode, topicId, subTopicId, questionId, onClose 
               value={formData.problemUrl}
               onChange={handleChange}
               placeholder="https://..."
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white"
             />
           </div>
 
           {/* Resource URL */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
               Resource URL (Video/Article)
             </label>
             <input
@@ -161,23 +163,23 @@ const QuestionModal = ({ isOpen, mode, topicId, subTopicId, questionId, onClose 
               value={formData.resource}
               onChange={handleChange}
               placeholder="https://youtu.be/..."
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white"
             />
           </div>
 
           {/* Buttons */}
-          <div className="flex gap-3 justify-end pt-4 border-t">
+          <div className="flex gap-3 justify-end pt-6 border-t border-gray-100 mt-6">
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 text-gray-700 bg-gray-200 rounded-lg hover:bg-gray-300"
+              className="px-4 py-2.5 text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-all duration-200 font-medium"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={!formData.title.trim()}
-              className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-4 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg hover:shadow-lg transition-all duration-200 font-medium disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none"
             >
               {mode === 'add' ? 'Add' : 'Update'}
             </button>

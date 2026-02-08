@@ -29,14 +29,14 @@ const MainContent = ({ topicId }) => {
     <div className="flex-1 overflow-y-auto">
       <div className="max-w-4xl mx-auto p-3 sm:p-4 md:p-6">
         {/* Topic Header */}
-        <div className="mb-6 sm:mb-8">
+        <div className="mb-6 sm:mb-8 pb-6 border-b border-gray-100">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 mb-4">
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 break-words flex-1">{topic.title}</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent break-words flex-1">{topic.title}</h1>
             {/* Difficulty Filter */}
             <select
               value={difficultyFilter}
               onChange={(e) => setDifficultyFilter(e.target.value)}
-              className="w-full sm:w-auto px-3 py-2 bg-gray-100 rounded-lg text-xs sm:text-sm font-medium outline-none hover:bg-gray-200"
+              className="w-full sm:w-auto px-4 py-2 bg-gradient-to-r from-blue-50 to-blue-100 border border-blue-200 rounded-lg text-xs sm:text-sm font-medium outline-none hover:border-blue-300 transition-all duration-200 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-20"
               title="Filter by difficulty"
             >
               <option value="all">All Levels</option>

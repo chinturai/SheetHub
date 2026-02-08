@@ -47,18 +47,18 @@ const StatisticsModal = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full">
+      <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full overflow-hidden">
         {/* Header */}
-        <div className="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200">
+        <div className="flex items-center justify-between p-4 sm:p-6 border-b border-gray-100 bg-gradient-to-r from-blue-50 to-blue-100">
           <div className="flex items-center gap-2">
             <BarChart3 size={24} className="text-blue-600" />
             <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Statistics</h2>
           </div>
           <button
             onClick={onClose}
-            className="p-1 hover:bg-gray-100 rounded"
+            className="p-1 hover:bg-white hover:shadow-md rounded-lg transition-all duration-200"
           >
-            <X size={20} />
+            <X size={20} className="text-gray-600" />
           </button>
         </div>
 
@@ -141,7 +141,7 @@ const StatisticsModal = ({ isOpen, onClose }) => {
             {/* Stats Grid */}
             <div className="flex-1 grid grid-cols-1 gap-4">
               {/* Total */}
-              <div className="p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg border border-blue-200">
+              <div className="p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl border border-blue-200 shadow-sm hover:shadow-md transition-all duration-200">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-xs text-blue-600 font-medium">Total Questions</p>
@@ -154,10 +154,10 @@ const StatisticsModal = ({ isOpen, onClose }) => {
               </div>
 
               {/* Easy */}
-              <div className="p-4 bg-gradient-to-br from-green-50 to-green-100 rounded-lg border border-green-200">
+              <div className="p-4 bg-gradient-to-br from-green-50 to-green-100 rounded-xl border border-green-200 shadow-sm hover:shadow-md transition-all duration-200">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-green-500 rounded-full shadow-md"></div>
                     <div>
                       <p className="text-xs text-green-600 font-medium">Easy</p>
                       <p className="text-xl font-bold text-green-900">
@@ -177,10 +177,10 @@ const StatisticsModal = ({ isOpen, onClose }) => {
               </div>
 
               {/* Medium */}
-              <div className="p-4 bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-lg border border-yellow-200">
+              <div className="p-4 bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-xl border border-yellow-200 shadow-sm hover:shadow-md transition-all duration-200">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-yellow-500 rounded-full shadow-md"></div>
                     <div>
                       <p className="text-xs text-yellow-600 font-medium">Medium</p>
                       <p className="text-xl font-bold text-yellow-900">
@@ -200,10 +200,10 @@ const StatisticsModal = ({ isOpen, onClose }) => {
               </div>
 
               {/* Hard */}
-              <div className="p-4 bg-gradient-to-br from-red-50 to-red-100 rounded-lg border border-red-200">
+              <div className="p-4 bg-gradient-to-br from-red-50 to-red-100 rounded-xl border border-red-200 shadow-sm hover:shadow-md transition-all duration-200">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-red-500 rounded-full shadow-md"></div>
                     <div>
                       <p className="text-xs text-red-600 font-medium">Hard</p>
                       <p className="text-xl font-bold text-red-900">
@@ -225,11 +225,11 @@ const StatisticsModal = ({ isOpen, onClose }) => {
           </div>
 
           {/* Progress Bar */}
-          <div className="mt-6 pt-6 border-t border-gray-200">
+          <div className="mt-6 pt-6 border-t border-gray-100">
             <p className="text-xs text-gray-600 font-medium mb-2">Overall Progress</p>
-            <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
+            <div className="w-full h-4 bg-gray-200 rounded-full overflow-hidden shadow-inner">
               <div
-                className="h-full bg-gradient-to-r from-green-500 via-yellow-500 to-red-500 rounded-full transition-all"
+                className="h-full bg-gradient-to-r from-green-500 via-yellow-500 to-red-500 rounded-full transition-all duration-500 shadow-lg"
                 style={{ width: `${solvePercentage}%` }}
               ></div>
             </div>
@@ -237,10 +237,10 @@ const StatisticsModal = ({ isOpen, onClose }) => {
         </div>
 
         {/* Footer */}
-        <div className="flex justify-end p-4 sm:p-6 border-t border-gray-200">
+        <div className="flex justify-end p-4 sm:p-6 border-t border-gray-100 bg-gradient-to-r from-gray-50 to-white">
           <button
             onClick={onClose}
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-6 py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg font-medium hover:shadow-lg transition-all duration-200 active:scale-95"
           >
             Close
           </button>

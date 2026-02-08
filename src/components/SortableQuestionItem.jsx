@@ -51,8 +51,10 @@ const SortableQuestionItem = ({ question, topic, subTopic }) => {
       <div
         ref={setNodeRef}
         style={style}
-        className={`p-2 sm:p-3 border rounded-lg hover:shadow-md transition-all group relative ${
-          question.isSolved ? 'bg-green-50 border-green-200' : 'bg-white border-gray-200'
+        className={`p-2 sm:p-3 border rounded-xl transition-all duration-200 group relative ${
+          question.isSolved 
+            ? 'bg-gradient-to-r from-green-50 to-emerald-50 border-green-200 shadow-sm' 
+            : 'bg-white border-gray-100 shadow-sm hover:shadow-md hover:border-blue-200'
         }`}
       >
         <div className="flex items-start gap-2 sm:gap-3 flex-wrap sm:flex-nowrap">
@@ -129,7 +131,7 @@ const SortableQuestionItem = ({ question, topic, subTopic }) => {
             {/* Text Notes Button */}
             <button
               onClick={() => setTextNotesOpen(true)}
-              className="p-1.5 hover:bg-blue-100 rounded text-blue-600"
+              className="p-1.5 hover:bg-blue-100 rounded-lg text-blue-600 transition-all duration-200 hover:scale-110"
               title="Text notes"
             >
               <FileText size={16} />
@@ -138,7 +140,7 @@ const SortableQuestionItem = ({ question, topic, subTopic }) => {
             {/* Drawing Notes Button */}
             <button
               onClick={() => setDrawingOpen(true)}
-              className="p-1.5 hover:bg-purple-100 rounded text-purple-600"
+              className="p-1.5 hover:bg-purple-100 rounded-lg text-purple-600 transition-all duration-200 hover:scale-110"
               title="Doodle notes"
             >
               <PenTool size={16} />
@@ -152,30 +154,30 @@ const SortableQuestionItem = ({ question, topic, subTopic }) => {
                 e.stopPropagation()
                 setShowMenu(!showMenu)
               }}
-              className="p-1 hover:bg-gray-200 rounded opacity-0 group-hover:opacity-100"
+              className="p-1 hover:bg-gray-200 rounded-lg opacity-0 sm:group-hover:opacity-100 transition-all duration-200"
             >
               <MoreVertical size={14} className="text-gray-400" />
             </button>
 
             {/* Menu */}
             {showMenu && (
-              <div className="absolute right-0 top-full mt-1 bg-white rounded-lg shadow-lg border border-gray-200 min-w-[150px] z-10">
+              <div className="absolute right-0 top-full mt-1 bg-white rounded-lg shadow-lg border border-gray-200 min-w-[150px] z-10 overflow-hidden">
                 <button
                   onClick={(e) => {
                     e.stopPropagation()
                     setShowMenu(false)
                     setModalOpen(true)
                   }}
-                  className="w-full px-4 py-2 text-left hover:bg-gray-100 text-sm flex items-center gap-2 border-b border-gray-100"
+                  className="w-full px-4 py-2 text-left hover:bg-blue-50 text-sm flex items-center gap-2 border-b border-gray-100 transition-colors duration-200"
                 >
-                  <Edit2 size={14} /> Edit
+                  <Edit2 size={14} className="text-blue-600" /> Edit
                 </button>
                 <button
                   onClick={(e) => {
                     e.stopPropagation()
                     handleDelete()
                   }}
-                  className="w-full px-4 py-2 text-left hover:bg-red-50 text-red-600 text-sm flex items-center gap-2"
+                  className="w-full px-4 py-2 text-left hover:bg-red-50 text-red-600 text-sm flex items-center gap-2 transition-colors duration-200"
                 >
                   <Trash2 size={14} /> Delete
                 </button>

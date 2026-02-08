@@ -23,9 +23,9 @@ const TopicList = ({ isOpen, sidebarOpen, setSidebarOpen }) => {
   if (!isOpen) return null
 
   return (
-    <div className="flex flex-col h-full bg-white border-r border-gray-200">
+    <div className="flex flex-col h-full bg-white border-r border-gray-100 shadow-sm">
       {/* Header */}
-      <div className="p-4 border-b border-gray-200 flex items-center justify-between gap-2">
+      <div className="p-4 border-b border-gray-100 flex items-center justify-between gap-2 bg-gradient-to-r from-white to-blue-50">
         <div>
           <h2 className="text-lg font-bold text-gray-900">Topics</h2>
           <p className="text-xs text-gray-500 mt-1">{topics.length} topics</p>
@@ -33,14 +33,14 @@ const TopicList = ({ isOpen, sidebarOpen, setSidebarOpen }) => {
         <div className="flex items-center gap-1">
           <button
             onClick={() => setModalOpen(true)}
-            className="p-1.5 hover:bg-blue-100 rounded text-blue-600"
+            className="p-1.5 hover:bg-blue-100 rounded-lg text-blue-600 transition-all duration-200"
             title="Add topic"
           >
             <Plus size={18} />
           </button>
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="p-1 hover:bg-gray-200 rounded lg:block hidden"
+            className="p-1 hover:bg-gray-200 rounded-lg lg:block hidden transition-all duration-200"
             title="Collapse sidebar"
           >
             <ChevronLeft size={20} className="text-gray-600" />

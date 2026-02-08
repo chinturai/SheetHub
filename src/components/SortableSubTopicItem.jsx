@@ -31,7 +31,7 @@ const SortableSubTopicItem = ({ topic, subTopic }) => {
 
   return (
     <>
-      <div ref={setNodeRef} style={style} className="border border-gray-200 rounded-lg overflow-hidden bg-white">
+      <div ref={setNodeRef} style={style} className="border border-gray-100 rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-all duration-200">
         {/* Header */}
         <button
           onClick={() => setIsOpen(!isOpen)}
